@@ -1,0 +1,5 @@
+<ul>
+  <% @current_week.each do |turn| %>
+    <%= render partial: turn, locals: { turn: turn } %>
+  <% end %>
+</ul>
