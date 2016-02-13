@@ -1,8 +1,12 @@
-<%= form_for @client do |f| %>
+<%= form_for @client, html: {class: 'form-signin'} do |f| %>
+  <h2 class="form-signin-heading">DNI</h2>
 
-  <%= f.label :dni, 'DNI' %><br>
-  <%= f.text_field :dni %><br>
+  <%= f.text_field :dni,
+                   placeholder: '33123456',
+                   required: true,
+                   autofocus: true,
+                   class: 'form-control'%>
 
-  <%= f.submit "Search" %>
+  <%= f.submit "Search", class: 'btn btn-lg btn-primary btn-block' %>
 
 <% end %>
