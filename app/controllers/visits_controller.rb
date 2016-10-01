@@ -2,6 +2,8 @@ class VisitsController < ApplicationController
   before_action :set_visit, only: [:show]
   layout "employee", only: [:index]
 
+  skip_before_action :authenticate_user, only: [:index]
+
   def new
     @visit = client.visits.new
     @calendar = Day.build 2
